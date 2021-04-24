@@ -1,0 +1,4 @@
+/target
+*.asc
+*.gz
+*.txt
