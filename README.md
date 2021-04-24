@@ -8,4 +8,4 @@ My current plan is a wizard that starts with selecting the file you want to veri
 
 Current debug ui:
 
-
+![greatux](https://user-images.githubusercontent.com/543668/115964140-f5ed2d80-a4f0-11eb-8afa-878572c32a76.png)
