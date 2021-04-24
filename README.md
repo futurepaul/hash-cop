@@ -6,6 +6,6 @@ The whole point is to make this easy to use for people scared of the command lin
 
 My current plan is a wizard that starts with selecting the file you want to verify, then the manifest, then the key of whoever signed the manifest. But please let me know if you have a better idea!
 
-Current debug ui:
+Current (beautiful) debug ui:
 
 ![greatux](https://user-images.githubusercontent.com/543668/115964140-f5ed2d80-a4f0-11eb-8afa-878572c32a76.png)
