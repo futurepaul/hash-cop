@@ -7,7 +7,7 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-druid = { git="https://github.com/linebender/druid", rev="5958963" }
+druid = { git="https://github.com/linebender/druid", rev="ac3e0a6" }
 digest = "0.8.1"
 hex-view = "0.1.3"
 sha2 = "0.8.1"

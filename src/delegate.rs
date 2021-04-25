@@ -32,14 +32,14 @@ pub struct Delegate;
 impl AppDelegate<AppState> for Delegate {
     fn command(
         &mut self,
-        _ctx: &mut DelegateCtx,
+        ctx: &mut DelegateCtx,
         _target: Target,
         cmd: &Command,
         data: &mut AppState,
         _env: &Env,
     ) -> Handled {
         if let Some(hash_result) = cmd.get(FINISH_SLOW_FUNCTION) {
-            data.processing = false;
+            data.busy_hashing = false;
             data.hash_result = hash_result.clone().into();
             Handled::Yes
         } else if let Some(file_info) = cmd.get(commands::OPEN_FILE) {
@@ -48,12 +48,14 @@ impl AppDelegate<AppState> for Delegate {
                     data.path = Some(Arc::new(file_info.path().into()));
                     if let Some(name) = file_info.path().file_name() {
                         data.filename = name.to_string_lossy().into();
+                        data.start_hash(ctx);
                     }
                 }
                 WhichFileAreWeOpening::TheManifest => {
                     data.manifest_path = Some(Arc::new(file_info.path().into()));
                     if let Some(name) = file_info.path().file_name() {
                         data.manifest_filename = name.to_string_lossy().into();
+                        data.parse_manifest();
                     }
                 }
             }
